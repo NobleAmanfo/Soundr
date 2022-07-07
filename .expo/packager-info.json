@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://ar-9r7.anonymous.soundr.exp.direct",
+  "packagerNgrokUrl": "https://ar-9r7.anonymous.soundr.exp.direct",
+  "ngrokPid": 5127,
+  "packagerPid": null,
+  "webpackServerPort": null
+}
