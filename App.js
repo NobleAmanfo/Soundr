@@ -5,7 +5,7 @@ import { createStackNavigator} from "react-navigation-stack"
 import { createAppContainer} from 'react-navigation'
 import LandingPage from "./components/LandingPage";
 import SignUp from "./components/SignUp";
-import NewRecents from "./components/NewRecents";
+import New from "./components/New";
 import Home from "./components/Home";
 
 
@@ -21,8 +21,8 @@ const RootStack  = createStackNavigator({
     navigationOptions:{
       header:null,
     }},
-      NewRecents: {
-        screen: NewRecents,
+      New: {
+        screen: New,
         navigationOptions:{
           header:null,
         }},

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, StatusBar, Pressable, BackHandler, Image, ScrollView, FlatList } from "react-native";
-import { color } from "react-native-reanimated";
+import Recents from "../components/Recents";
 
 
 export default class NewRecents extends React.Component {
@@ -40,8 +40,9 @@ export default class NewRecents extends React.Component {
         <View>
           <Text style={{ color: 'black', fontWeight: "bold", marginLeft: 20, fontSize: 25, paddingTop:20}} >Recents</Text>
         </View>
+        <Recents text = {'LoverBoy'}/>
 
-        <ScrollView>
+        {/* <ScrollView>
           <View style = {{flexDirection:'row'}}>
           <View>
           <Pressable style={styles.button1}
@@ -306,7 +307,7 @@ export default class NewRecents extends React.Component {
         </Pressable>
         </View>
         </View>
-        </ScrollView>
+        </ScrollView> */}
         
                 
         {/* <Pressable style={styles.button} 

@@ -17,7 +17,7 @@ export default class SignUp extends React.Component {
           placeholder="Password"
         />
         <Pressable style={styles.button}
-          onPress={() => this.props.navigation.navigate('NewRecents')
+          onPress={() => this.props.navigation.navigate('New')
           } >
           <Text style={{ color: 'white', fontWeight: "bold" }} >Create an Account</Text>
         </Pressable>
