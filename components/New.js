@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, StatusBar, Pressable, BackHandler, Image, ScrollView, FlatList } from "react-native";
+import { StyleSheet, Text, View, StatusBar, Pressable, TextInput, Image, ScrollView, FlatList } from "react-native";
 import Recents from "../components/Recents";
 import NewPopup from "../components/NewPopup";
 import Modal from 'react-native-modal';
+
 
 
 
@@ -51,16 +52,31 @@ export default class New extends React.Component {
 
 
         <Modal transparent = {true} visible = {this.state.show}>
-          <View style={{ flex: 1, backgroundColor: '#000000aa' }}>
-
-            <View style = {{backgroundColor:'#ffffff', margin:50, padding:10, justifyContent:'center', alignItems:'center', borderRadius:10}}>
-              <Text>This is the modal content for now!</Text>
+          <View style={{blurRadius:2, backgroundColor: '#000000aa', borderRadius:10,  height:500, justifyContent:'center', alignItems:'center', }}>
+            <View style = {{paddingBottom:10}}>
+              <Text style = {{fontSize:30, fontWeight:'bold'}}>
+                Title
+              </Text>
+            </View>
+            <View style = {{elevation: 20, backgroundColor:'#ffffff', padding:10, justifyContent:'center', alignItems:'center', borderRadius:10, borderWidth:1, borderColor: '#94a274',}}>
+            <TextInput
+          style={styles.input}
+          placeholder="Project Name"
+        />
               </View>
+              <Pressable style={styles.button1}
+          onPress={() => {this.setState({show:false}, () => this.props.navigation.navigate('Home'))} 
+          } >
+            <View style = {{borderWidth:2, borderColor:'white', backgroundColor: 'transparent', borderRadius:10}}>
+            <Text style={{ color: 'white', fontWeight: "bold", padding:10, paddingHorizontal:18 }} >Ready when you are!</Text>
+            </View>
+        </Pressable>
+
           </View>
       </Modal >
 
       <Recents text={'LoverBoy'} />
-
+ 
     {/* <ScrollView>
           <View style = {{flexDirection:'row'}}>
           <View>
@@ -366,8 +382,6 @@ const styles = StyleSheet.create({
     borderColor: '#94a274',
     alignItems: 'center',
     justifyContent: 'center',
-    // height: '25%',
-    // width: '30%',
     height: 65,
     width: 120,
     borderRadius: 10,
@@ -377,37 +391,16 @@ const styles = StyleSheet.create({
     marginTop: 10
 
   },
-  button2: {
-    borderWidth: 2,
-    borderColor: '#94a274',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // height: '25%',
-    // width: '30%',
-
-    height: 150,
-    width: 120,
-    borderRadius: 10,
-    elevation: 3,
-    backgroundColor: 'white',
-    marginLeft: 25,
-    marginTop: 10
-
-  },
 
   button1: {
-    borderWidth: 2,
-    borderColor: '#94a274',
-    // height: '25%',
-    // width: '30%',
-    height: 150,
-    width: 120,
+    height: 50,
+    width: 200,
     borderRadius: 10,
     elevation: 3,
-    backgroundColor: 'white',
-    marginLeft: 13,
+    backgroundColor: '#94a274',
     marginTop: 10,
-
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   wrapper: {
     flex: 1
@@ -422,6 +415,15 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 5,
 
-  }
+  },
+  input: {
+   
+    paddingVertical: 12,
+    width: 300,
+    borderWidth: 1,
+    backgroundColor: '#94a274',
+    padding: 10,
+    borderRadius: 10
+  },
 
 })
