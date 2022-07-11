@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, StatusBar, Pressable, BackHandler, Image, ScrollView, FlatList } from "react-native";
 import moment from "moment";
 

@@ -1,7 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View, StatusBar, Pressable, } from "react-native";
+import React, {Component} from 'react';import { StyleSheet, Text, View, StatusBar, Pressable, } from "react-native";
 import { Button } from "react-native-web";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 
 

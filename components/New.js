@@ -1,48 +1,67 @@
-import React from "react";
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, StatusBar, Pressable, BackHandler, Image, ScrollView, FlatList } from "react-native";
 import Recents from "../components/Recents";
+import NewPopup from "../components/NewPopup";
+import Modal from 'react-native-modal';
 
 
-export default class NewRecents extends React.Component {
+
+export default class New extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      show:false
+    }
+  }
   render() {
     return (
       <View style={{ backgroundColor: '#fafafa', flex: 1 }}>
         <StatusBar style="auto" />
-        <View style={{backgroundColor:'black', alignItems: 'center', height:150, borderBottomLeftRadius:10, borderBottomRightRadius:10, paddingBottom:10 }}>
-          
-          <View style={{ height: 80, width: 60, backgroundColor: '#94a274',  borderRadius: 10, marginTop: 50, }}>
+        <View style={{ backgroundColor: 'black', alignItems: 'center', height: 150, borderBottomLeftRadius: 10, borderBottomRightRadius: 10, paddingBottom: 10 }}>
+
+          <View style={{ height: 80, width: 60, backgroundColor: '#94a274', borderRadius: 10, marginTop: 50, }}>
             <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-              <View style={{ borderRadius: 30, backgroundColor: 'black', height: 40, width: 40, marginTop:10 }}>
-                <Text style={{ color: 'black', fontWeight: "bold", fontSize: 10, paddingVertical:45, marginLeft:5 }} >Noble</Text>
+              <View style={{ borderRadius: 30, backgroundColor: 'black', height: 40, width: 40, marginTop: 10 }}>
+                <Text style={{ color: 'black', fontWeight: "bold", fontSize: 10, paddingVertical: 45, marginLeft: 5 }} >Noble</Text>
 
               </View>
             </View>
           </View>
         </View>
-        <View style = {{paddingTop:20}}>
+        <View style={{ paddingTop: 20 }}>
           <Text style={{ color: 'black', fontWeight: "bold", marginLeft: 20, fontSize: 25, }} >Projects</Text>
           <Pressable style={styles.button}
-          onPress={() => this.props.navigation.navigate('Home')
-          } >
-            <View  style={{ flexDirection: 'row', alignItems: 'center',}}>
-              <View style = {{borderWidth: 2, borderRadius:4, borderColor: '#94a274', marginRight:10}}>
-              <Image
-                style={{ height: 15, width: 15,  }}
-                source={require('../assets/add-2.png')
-                }
-              />
+            onPress={() => {this.setState({show:true})}} >
+            <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+              <View style={{ borderWidth: 2, borderRadius: 4, borderColor: '#94a274', marginRight: 10 }}>
+                <Image
+                  style={{ height: 15, width: 15, }}
+                  source={require('../assets/add-2.png')
+                  }
+                />
               </View>
-            
-            <Text style={{ color: 'black', fontWeight: "bold", color: '#94a274'}} >New</Text>
+
+              <Text style={{ color: 'black', fontWeight: "bold", color: '#94a274' }} >New</Text>
             </View>
-        </Pressable>
+          </Pressable>
         </View>
         <View>
-          <Text style={{ color: 'black', fontWeight: "bold", marginLeft: 20, fontSize: 25, paddingTop:20}} >Recents</Text>
+          <Text style={{ color: 'black', fontWeight: "bold", marginLeft: 20, fontSize: 25, paddingTop: 20 }} >Recents</Text>
         </View>
-        <Recents text = {'LoverBoy'}/>
 
-        {/* <ScrollView>
+
+        <Modal transparent = {true} visible = {this.state.show}>
+          <View style={{ flex: 1, backgroundColor: '#000000aa' }}>
+
+            <View style = {{backgroundColor:'#ffffff', margin:50, padding:10, justifyContent:'center', alignItems:'center', borderRadius:10}}>
+              <Text>This is the modal content for now!</Text>
+              </View>
+          </View>
+      </Modal >
+
+      <Recents text={'LoverBoy'} />
+
+    {/* <ScrollView>
           <View style = {{flexDirection:'row'}}>
           <View>
           <Pressable style={styles.button1}
@@ -308,13 +327,13 @@ export default class NewRecents extends React.Component {
         </View>
         </View>
         </ScrollView> */}
-        
-                
-        {/* <Pressable style={styles.button} 
+
+
+    {/* <Pressable style={styles.button} 
                onPress={() => this.props.navigation.navigate('Home')
               } >
             </Pressable> */}
-      </View>
+      </View >
     )
   }
 }
@@ -350,13 +369,13 @@ const styles = StyleSheet.create({
     // height: '25%',
     // width: '30%',
     height: 65,
-    width:120,
+    width: 120,
     borderRadius: 10,
     elevation: 3,
     backgroundColor: 'white',
-    marginLeft:13,
-    marginTop:10
-    
+    marginLeft: 13,
+    marginTop: 10
+
   },
   button2: {
     borderWidth: 2,
@@ -367,13 +386,13 @@ const styles = StyleSheet.create({
     // width: '30%',
 
     height: 150,
-    width:120,
+    width: 120,
     borderRadius: 10,
     elevation: 3,
     backgroundColor: 'white',
-    marginLeft:25,
-    marginTop:10
-    
+    marginLeft: 25,
+    marginTop: 10
+
   },
 
   button1: {
@@ -382,27 +401,27 @@ const styles = StyleSheet.create({
     // height: '25%',
     // width: '30%',
     height: 150,
-    width:120,
+    width: 120,
     borderRadius: 10,
     elevation: 3,
     backgroundColor: 'white',
-    marginLeft:13,
-    marginTop:10,
-    
+    marginLeft: 13,
+    marginTop: 10,
+
   },
   wrapper: {
     flex: 1
-},
-container: {
+  },
+  container: {
     flexDirection: 'row',
     paddingHorizontal: 5,
-},
-list: {
+  },
+  list: {
     flex: 1,
     flexDirection: 'column',
     paddingVertical: 10,
     paddingHorizontal: 5,
-    
-}
+
+  }
 
 })
